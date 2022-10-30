@@ -8,11 +8,9 @@ import com.mrli.bootblockchain.domain.User;
 import com.mrli.bootblockchain.pojo.UserLoginPojo;
 import com.mrli.bootblockchain.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -20,6 +18,9 @@ import javax.annotation.Resource;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+
+    @Resource
+    private RedisTemplate redisTemplate;
 
     @Resource
     private UserService userService;
@@ -55,7 +56,11 @@ public class UserController {
             String token = TokenUtil.generateToken(user);
 //            解token
 //            User user1 = TokenUtil.parseToken(token);
-
+            //设置值到redis中去
+            redisTemplate.opsForValue().set(user.getUserId()+"token",token);
+            //从redis中获取token
+            Object name = redisTemplate.opsForValue().get(user.getUserId()+"token");
+            log.info(user.getUserId()+"token:"+name);
             return R.returnToken(StatusCode.OK,token,user);
         }else{
             return R.error("登录失败！此用户不存在",StatusCode.NOTFOUND);
@@ -64,9 +69,12 @@ public class UserController {
     }
 
 
-    @RequestMapping("/test")
-    public String test(){
-        return "年后";
+    @GetMapping("/test")
+    public @ResponseBody Object test(){
+
+        String redisToken = (String)redisTemplate.opsForValue().get("1585649742635913218token");
+        log.info(redisToken);
+        return redisToken;
     }
 
 

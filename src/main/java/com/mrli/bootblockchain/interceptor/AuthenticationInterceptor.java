@@ -21,6 +21,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
 
     @Resource
     private UserService userService;
+    /*
 
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object) throws Exception {
 //        查看请求中是否存在token，如果不存在直接跳转到登陆页面
@@ -47,4 +48,6 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
         return false;
     }
 
+
+     */
 }

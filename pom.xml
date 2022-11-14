@@ -82,9 +82,6 @@
             <version>1.7.32</version>
         </dependency>
 
-
-
-
         <!-- redis -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

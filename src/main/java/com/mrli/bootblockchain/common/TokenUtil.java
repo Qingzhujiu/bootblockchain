@@ -21,11 +21,13 @@ public class TokenUtil{
      * @param user
      * @return
      */
+    /*
     public static String generateToken(User user) {
         Date start = new Date();
         long currentTime = System.currentTimeMillis() + 60* 60 * 1000;//一小时有效时间
         Date end = new Date(currentTime);
         String token = "";
+
         token = JWT.create()
                 .withClaim("userId",user.getUserId())
                 .withClaim("userName",user.getUserName())
@@ -34,6 +36,7 @@ public class TokenUtil{
                 .withIssuedAt(start)
                 .withExpiresAt(end)
                 .sign(Algorithm.HMAC256("tokenKey"));
+
         return token;
     }
 
@@ -53,9 +56,12 @@ public class TokenUtil{
         user.setUserName(userName.asString());
         user.setUserPassword(userPassword.asString());
         user.setUserEmail(userEmail.asString());
+
         return user;
     }
 
+
+     */
 
     /**
      *
@@ -91,4 +97,5 @@ public class TokenUtil{
         String token = request.getHeader("token");
         return token;
     }
+
 }

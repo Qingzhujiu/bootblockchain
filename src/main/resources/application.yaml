@@ -7,9 +7,10 @@ spring:
 #    name: bootblockchain
   datasource:
     druid:
-      #      driver-class-name: com.mysql.cj.jdbc.Driver
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/bootblockchain?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      #driver-class-name: com.mysql.jdbc.Driver
+      #url: jdbc:mysql://localhost:3306/bootblockchain?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/blockchain?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: root
       #password: ljc625995
       password: chenwenshuo123

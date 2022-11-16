@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrli.bootblockchain.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.mrli.bootblockchain.domain.User">
+            <id property="id" column="user_id"/>
+            <result property="name" column="user_name" jdbcType="VARCHAR"/>
+            <result property="username" column="user_username" jdbcType="VARCHAR"/>
+            <result property="password" column="user_password" jdbcType="VARCHAR"/>
+            <result property="sex" column="user_sex" jdbcType="VARCHAR"/>
+            <result property="address" column="user_address" jdbcType="VARCHAR"/>
+            <result property="monad" column="user_monad" jdbcType="VARCHAR"/>
+            <result property="phone_number" column="user_phone_number" jdbcType="VARCHAR"/>
+            <result property="area" column="user_area" jdbcType="VARCHAR"/>
+            <result property="Rank" column="user_Rank" jdbcType="VARCHAR"/>
+            <result property="education" column="user_education" jdbcType="VARCHAR"/>
+            <result property="professional_field" column="user_professional_field" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+
+    <select id="getUserByUserName" resultMap="BaseResultMap">
+        SELECT *
+        FROM USER
+        WHERE (user_username = #{username})
+    </select>
+    
+</mapper>

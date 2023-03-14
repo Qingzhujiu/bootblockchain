@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrli.bootblockchain.mapper.JournalArticleAdditionalInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.mrli.bootblockchain.domain.JournalArticleAdditionalInfo">
+            <id property="articleAdditionalInfoId" column="article_additional_info_id" jdbcType="BIGINT"/>
+            <result property="explain" column="explain" jdbcType="VARCHAR"/>
+            <result property="justification" column="justification" jdbcType="VARCHAR"/>
+            <result property="informedConsent" column="informed_consent" jdbcType="VARCHAR"/>
+            <result property="keywords" column="keywords" jdbcType="VARCHAR"/>
+            <result property="manuscriptType" column="manuscript_type" jdbcType="VARCHAR"/>
+            <result property="uniqueContribution" column="unique_contribution" jdbcType="VARCHAR"/>
+            <result property="subjectCategory" column="subject_category" jdbcType="VARCHAR"/>
+            <result property="scope" column="scope" jdbcType="VARCHAR"/>
+            <result property="manuscriptId" column="manuscript_id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        article_additional_info_id,explain,justification,
+        informed_consent,keywords,manuscript_type,
+        unique_contribution,subject_category,scope,
+        manuscript_id
+    </sql>
+</mapper>

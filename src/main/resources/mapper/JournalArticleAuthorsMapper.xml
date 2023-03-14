@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrli.bootblockchain.mapper.JournalArticleAuthorsMapper">
+
+    <resultMap id="BaseResultMap" type="com.mrli.bootblockchain.domain.JournalArticleAuthors">
+            <id property="authorId" column="author_id" jdbcType="BIGINT"/>
+            <result property="authorName" column="author_name" jdbcType="VARCHAR"/>
+            <result property="authorSex" column="author_sex" jdbcType="VARCHAR"/>
+            <result property="authorArea" column="author_area" jdbcType="VARCHAR"/>
+            <result property="authorAffiliation" column="author_affiliation" jdbcType="VARCHAR"/>
+            <result property="articleId" column="article_id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        author_id,author_name,author_sex,
+        author_area,author_affiliation,article_id
+    </sql>
+</mapper>

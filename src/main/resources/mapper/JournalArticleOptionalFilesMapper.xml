@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrli.bootblockchain.mapper.JournalArticleOptionalFilesMapper">
+
+    <resultMap id="BaseResultMap" type="com.mrli.bootblockchain.domain.JournalArticleOptionalFiles">
+            <id property="optionalFileId" column="optional_file_id" jdbcType="BIGINT"/>
+            <result property="optionalFileName" column="optional_file_name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        optional_file_id,optional_file_name
+    </sql>
+</mapper>

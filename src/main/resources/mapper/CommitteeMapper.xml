@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrli.bootblockchain.mapper.CommitteeMapper">
+
+    <resultMap id="BaseResultMap" type="com.mrli.bootblockchain.domain.Committee">
+            <id property="committeeId" column="committee_id" jdbcType="BIGINT"/>
+            <result property="committeeName" column="committee_name" jdbcType="VARCHAR"/>
+            <result property="presidentName" column="president_name" jdbcType="VARCHAR"/>
+            <result property="committeeAbstract" column="committee_abstract" jdbcType="VARCHAR"/>
+            <result property="missionStatement" column="mission_statement" jdbcType="VARCHAR"/>
+            <result property="visionStatement" column="vision_statement" jdbcType="VARCHAR"/>
+            <result property="viceChairman1" column="vice_chairman1" jdbcType="VARCHAR"/>
+            <result property="viceChairman2" column="vice_chairman2" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="VARCHAR"/>
+            <result property="state" column="state" jdbcType="INTEGER"/>
+            <result property="presidentId" column="president_id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        committee_id,committee_name,president_name,
+        committee_abstract,mission_statement,vision_statement,
+        vice_chairman1,vice_chairman2,create_time,
+        state,logo
+    </sql>
+</mapper>

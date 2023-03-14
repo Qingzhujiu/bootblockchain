@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
-@RestController
+@RestController(value = "/user")
 @Slf4j
 public class UserController {
     @Autowired
@@ -28,7 +28,7 @@ public class UserController {
      * @param user
      * @return
      */
-    @RequestMapping(value = "/userLogin")
+    @RequestMapping(value = "/login")
     public R<String> userLogin(HttpServletRequest request,@RequestBody User user){
         String password = user.getPassword();
         String username = user.getUsername();
@@ -62,7 +62,7 @@ public class UserController {
      * @param user
      * @return
      */
-    @RequestMapping(value = "/userRegister")
+    @RequestMapping(value = "/register")
     public R<String> userRegister(@RequestBody User user){
         //将用户输入的密码进行md5加密
         String password = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());

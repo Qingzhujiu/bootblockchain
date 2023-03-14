@@ -22,6 +22,13 @@ public class R<T> {
 
     private Map map = new HashMap(); //动态数据
 
+    /**
+     *
+     * @param object 返回的类型 可以是String 或实体类
+     * @param statusCode  状态码 成功返回1  若有其他需求也可为其他
+     * @return
+     * @param <T>
+     */
     public static <T> R<T> success(T object,int statusCode) {
         R<T> r = new R<T>();
         r.data = object;

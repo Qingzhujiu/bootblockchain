@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrli.bootblockchain.mapper.JournalArticleOpposedReviewersMapper">
+
+    <resultMap id="BaseResultMap" type="com.mrli.bootblockchain.domain.JournalArticleOpposedReviewers">
+            <id property="reviewerId" column="reviewer_id" jdbcType="BIGINT"/>
+            <result property="reviewerFirstName" column="reviewer_first_name" jdbcType="VARCHAR"/>
+            <result property="reviewerLastName" column="reviewer_last_name" jdbcType="VARCHAR"/>
+            <result property="reviewerTypeAffiliation" column="reviewer_type_affiliation" jdbcType="VARCHAR"/>
+            <result property="reviewerEmail" column="reviewer_email" jdbcType="VARCHAR"/>
+            <result property="articleId" column="article_id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        reviewer_id,reviewer_first_name,reviewer_last_name,
+        reviewer_type_affiliation,reviewer_email,article_id
+    </sql>
+</mapper>

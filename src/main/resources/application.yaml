@@ -22,4 +22,8 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:
+      #使用雪花算法填充主键
       id-type: ASSIGN_ID
+
+bootblockchain:
+  path: D:\MyCode\JavaProject\reggie_take_out\uploadPicture\

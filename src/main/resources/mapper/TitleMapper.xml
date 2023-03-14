@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrli.bootblockchain.mapper.TitleMapper">
+
+    <resultMap id="BaseResultMap" type="com.mrli.bootblockchain.domain.Title">
+            <result property="committeeId" column="committee_id" jdbcType="BIGINT"/>
+            <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+            <result property="userTitle" column="user_title" jdbcType="VARCHAR"/>
+            <result property="committeeName" column="committee_name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        committee_id,user_name,user_title,
+        committee_name
+    </sql>
+</mapper>

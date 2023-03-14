@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrli.bootblockchain.mapper.ConferenceMapper">
+
+    <resultMap id="BaseResultMap" type="com.mrli.bootblockchain.domain.Conference">
+            <id property="conferenceId" column="conference_id" jdbcType="BIGINT"/>
+            <result property="committeeId" column="committee_id" jdbcType="BIGINT"/>
+            <result property="committeeName" column="committee_name" jdbcType="VARCHAR"/>
+            <result property="conferenceDates" column="conference_dates" jdbcType="VARCHAR"/>
+            <result property="paperOrPosterSubmissionDeadline" column="paper_or_poster_submission_deadline" jdbcType="VARCHAR"/>
+            <result property="tutorialProposalSubmissionDeadline" column="tutorial_proposal_submission_deadline" jdbcType="VARCHAR"/>
+            <result property="demoSubmissionDeadline" column="demo_submission_deadline" jdbcType="VARCHAR"/>
+            <result property="acceptanceNotifications" column="acceptance_notifications" jdbcType="VARCHAR"/>
+            <result property="tutorialAndDemoCcceptanceNotifications" column="tutorial_and_demo_ccceptance_notifications" jdbcType="VARCHAR"/>
+            <result property="cameraReadyDeadline" column="camera_ready_deadline" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        conference_id,committee_id,committee_name,
+        conference_dates,paper_or_poster_submission_deadline,tutorial_proposal_submission_deadline,
+        demo_submission_deadline,acceptance_notifications,tutorial_and_demo_ccceptance_notifications,
+        camera_ready_deadline
+    </sql>
+</mapper>

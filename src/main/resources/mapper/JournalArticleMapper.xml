@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrli.bootblockchain.mapper.JournalArticleMapper">
+
+    <resultMap id="BaseResultMap" type="com.mrli.bootblockchain.domain.JournalArticle">
+            <id property="articleId" column="article_id" jdbcType="BIGINT"/>
+            <result property="articleTitle" column="article_title" jdbcType="VARCHAR"/>
+            <result property="articleAbstract" column="article_abstract" jdbcType="VARCHAR"/>
+            <result property="optionalFileId" column="optional_file_id" jdbcType="BIGINT"/>
+            <result property="articleAdditionalInfoId" column="article_additional_info_id" jdbcType="BIGINT"/>
+            <result property="animalSubjectId" column="animal_subject_id" jdbcType="BIGINT"/>
+            <result property="articleTypeId" column="article_type_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        article_id,article_title,article_abstract,
+        optional_file_id,article_additional_info_id,animal_subject_id,
+        article_type_id
+    </sql>
+</mapper>

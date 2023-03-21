@@ -1,6 +1,5 @@
 package com.mrli.bootblockchain.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.mrli.bootblockchain.common.R;
 import com.mrli.bootblockchain.common.RForLoginAndRegister;
 import com.mrli.bootblockchain.domain.User;
@@ -14,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
-@RestController(value = "/user")
+@RestController()
+@RequestMapping(value = "/user")
 @Slf4j
 public class UserController {
     @Autowired

@@ -84,13 +84,13 @@ public class JournalArticleController {
         animalSubjectId = journalArticleAnimalSubject.getAnimalSubjectId();
 
 
-        //TODO 待办，将传入的author数据存入数据库并获取主键 原因：author作用未知
-        JournalArticleAuthors journalArticleAuthors = new JournalArticleAuthors();
-        journalArticleAuthorsService.save(journalArticleAuthors);
-
         //获取journalArticle的id
         JournalArticle journalArticle = new JournalArticle(title,anAbstract,optionalFileId,articleAdditionalInfoId,animalSubjectId,articalTypeId);
         Long articleId = journalArticle.getArticleId();
+
+        //TODO 待办，将传入的author数据存入数据库并获取主键 原因：author作用未知
+        JournalArticleAuthors journalArticleAuthors = new JournalArticleAuthors(authors.get(0).toString(),sex,area,affiliations.get(0).toString(),articleId);
+        journalArticleAuthorsService.save(journalArticleAuthors);
 
         //对journalArticleOpposedReviewers表进行存储
         JournalArticleOpposedReviewers journalArticleOpposedReviewers = new JournalArticleOpposedReviewers(firstName,lastName,typeAffiliation,email,articleId);

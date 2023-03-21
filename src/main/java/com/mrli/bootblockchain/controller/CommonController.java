@@ -18,10 +18,11 @@ import java.util.UUID;
 @RequestMapping("/common")
 @Slf4j
 public class CommonController {
+
     /**
      * 获取.yaml配置文件中写入的指定存入地址
      */
-    @Value("${bootblockchain.path}")
+    @Value("${bootblockchain.journal-download-path}")
     public String basePath;
 
 
@@ -46,6 +47,7 @@ public class CommonController {
         //防止进行存储时，目录不存在导致报错
         //创建一个目录对象
         File dir = new File(basePath);
+
         //判断当前目录是否存在
         if (!dir.exists()) {
             //目录不存在则进行创建

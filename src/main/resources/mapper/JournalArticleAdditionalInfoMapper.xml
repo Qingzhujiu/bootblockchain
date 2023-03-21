@@ -23,4 +23,6 @@
         unique_contribution,subject_category,scope,
         manuscript_id
     </sql>
+
+
 </mapper>

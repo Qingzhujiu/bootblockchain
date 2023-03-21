@@ -26,4 +26,4 @@ mybatis-plus:
       id-type: ASSIGN_ID
 
 bootblockchain:
-  path: D:\MyCode\JavaProject\reggie_take_out\uploadPicture\
+  journal-download-path: C:\Users\qingzhujiu\Desktop\

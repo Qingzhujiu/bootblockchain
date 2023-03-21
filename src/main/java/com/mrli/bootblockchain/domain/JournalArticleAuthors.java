@@ -45,6 +45,13 @@ public class JournalArticleAuthors implements Serializable {
      */
     private Long articleId;
 
+    public JournalArticleAuthors(String authorName, String authorSex, String authorArea, String authorAffiliation, Long articleId) {
+        this.authorName = authorName;
+        this.authorSex = authorSex;
+        this.authorArea = authorArea;
+        this.authorAffiliation = authorAffiliation;
+        this.articleId = articleId;
+    }
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

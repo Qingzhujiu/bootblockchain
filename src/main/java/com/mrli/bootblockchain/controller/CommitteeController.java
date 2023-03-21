@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
 
-@RestController(value = "/committee")
+@RestController
+@RequestMapping("/committee")
 @Slf4j
 public class CommitteeController {
     @Autowired

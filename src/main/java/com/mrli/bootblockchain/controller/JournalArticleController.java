@@ -35,6 +35,9 @@ public class JournalArticleController {
     @Transactional
     @RequestMapping(value = "/submit")
     public R<String> journalSubmit(@RequestBody JSONObject article) {
+
+        System.out.println(article.toString());
+
         //将前端传入的json数据进行解析
         String articleType = article.getString("articleType");
         String title = article.getString("title");
@@ -67,7 +70,8 @@ public class JournalArticleController {
         Long optionalFileId=0L;
 
         //获取传入的articleType对应的id为多少
-        articalTypeId = journalArticleTypeService.getArticalTypeId(articleType);
+        articalTypeId = Integer.valueOf(articleType);
+        //journalArticleTypeService.getArticalTypeId(articleType);
 
         //构造journalArticleAdditionalInfo，此时类中无id
         //TODO manuscriptID未正确填入 该属性作用未知
@@ -86,6 +90,7 @@ public class JournalArticleController {
 
         //获取journalArticle的id
         JournalArticle journalArticle = new JournalArticle(title,anAbstract,optionalFileId,articleAdditionalInfoId,animalSubjectId,articalTypeId);
+       journalArticleService.save(journalArticle);
         Long articleId = journalArticle.getArticleId();
 
         //TODO 待办，将传入的author数据存入数据库并获取主键 原因：author作用未知

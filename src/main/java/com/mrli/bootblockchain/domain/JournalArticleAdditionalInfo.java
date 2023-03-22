@@ -23,6 +23,7 @@ public class JournalArticleAdditionalInfo implements Serializable {
     /**
      * 
      */
+    @TableField("`explain`")
     private String explain;
 
     /**
@@ -66,6 +67,7 @@ public class JournalArticleAdditionalInfo implements Serializable {
     private Long manuscriptId;
 
     public JournalArticleAdditionalInfo(String explain, String justification, String informedConsent, String keywords, String manuscriptType, String uniqueContribution, String subjectCategory, String scope, Long manuscriptId) {
+        this.articleAdditionalInfoId = null;
         this.explain = explain;
         this.justification = justification;
         this.informedConsent = informedConsent;
